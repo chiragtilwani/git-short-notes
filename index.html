@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Git short notes</title>
+</head>
+<body>
+    <h1>Git short notes</h1>
+    <h2>Git Introduction - </h2>
+    <ol>
+        <li><strong>Git is Version Control System.</strong></li>
+        <li><strong>Benefits of Git:</strong>
+            <ol class="inner-ol">
+                <li>Easy file recovery.</li>
+                <li>We can easily come to know who introduced issue in our code and when.</li>
+                <li>Can roll back to previosuly working states.</li>
+            </ol>
+        </li>
+        <li><strong>History of git:</strong>
+            <ol class="inner-ol">
+                <li><strong>Local version control system - DB </strong>is used to keep track of files,you can rollback to previous version,but if your hard disk is lost everything is lost.</li>
+                <li><strong>Centralized version control system - </strong>In this centralized <b>Sever</b> is used to keep track of files, but if you lost server ,everything is lost anyhow  we can get current project back from contributors of that project but we can't rollback.</li>
+                <li><strong>Distributed version control system - </strong>This is exactly same as <strong>Centralized version control system</strong> only difference is that in this VCS every contributor has full file history so even if server got damaged than also we can rollback as everyone has full file history.<br>✨Git is actually Distributed Version Control System</li>
+            </ol>
+        </li>
+        <li><strong>Git and Github are two different things:</strong>
+            <ol class="inner-ol">
+                <li><strong>Git - </strong>Version Control System.</li>
+                <li><strong>Github - </strong>Hosting Service, website that host git repositories.</li>
+                <li><strong>Repository - </strong>Folder of git project.<br>&nbsp;&nbsp;ex your project has files : F1,F2,F3,...Fn and has folders :Fo1,Fo2,Fo3,...,Fon so all these files and folders(.git folder) collectively called as repository.</li>
+            </ol>
+        </li>
+    </ol>
+    <h2>Initial Setup - </h2>
+    <ol>
+        <li>Launch git bash(it is nothing but terminal like linux, you can also use git using normal powershell windows terminal).</li>
+        <li>To check git is installed or not run command <strong>git</strong><br>&nbsp;&nbsp;if it shows error means your git is not installed and if it shows something like usage , --info path means your git is installed.</li>
+        <li>Git can be used in 2 ways - <br>1)Command line tools<small> (by writing commands) </small><br>2)GUI<small> (just by using buttons)</small><br>But disadvantage of using GUI is that we can't use some features that can be used by using command line tools.</li>
+        <li>Before using git configure your username and email as :</li>
+            <ol class="inner-ol">
+                <li><strong>git config --global user.name "YOUR NAME"</strong> - for configuring username</li>
+                <li><strong>git config --global user.email "YOUR EMAIL"</strong> - for configuring email</li>
+                <li><strong>git config user.name</strong> - is used to check your username</li>
+                <li><strong>git config user.email</strong> - is used to check your email</li>
+            </ol>
+    </ol>
+    <h2>Git : Three Stages Architecture - </h2>
+    <ol>
+        <li><strong>Working Directory - </strong>Full folder on which we are working on.</li>
+        <li><strong>Staging Area - </strong>Those files which you want to be in next commit(snapshot).</li>
+        <li><strong>Git Repository - </strong>It is hidden folder with name <strong>.git</strong> which has full file history of your project.</li>
+    </ol>
+    <h2>Commands for Tracking Git Project - </h2>
+    <ol>
+        <li><strong>git status</strong> - To show status of your project,you can check if there is any changes left to be commited.</li>
+        <li><strong>git init</strong> - To make any project as git project we need to run this command.</li>
+        <li><strong>git add --a</strong> - To add all the changes into staging area at once.</li>
+        <li><strong>git commit -m "msg"</strong> - To commit changes.</li>
+        <li><strong>git log</strong> - To display information of all commits of your project.</li>
+        <li><strong>rm -rf .git</strong> - To stop tracking,It will delete .git file.</li>
+    </ol>
+    <h2>Cloning remote git reopository - </h2>
+    <ul class="steps">
+        <li> Search for <strong>git website &lt;repository name &gt;</strong>.</li>
+        <li> Press code button and then copy url.</li>
+        <li>Go in any folder and open git bash.</li>
+        <li>run command <strong>git clone &lt;copied url&gt;</strong> it will pull code of that git repository to your computer and now you will be the owner of that repository(pulled repository) and you can make any changes in that</li>
+        <li><strong>Note :-</strong>You will become the owner of pulled repository not actual repository.</li>
+        <li>If you want to give some different name to pulled repository you can do it by running <strong>git clone &lt;copied url&gt; &lt;name you want to give&gt;</strong></li>
+    </ul>
+    <h2>File Status lifecycle - </h2>
+   <p> <b>project</b> --git init--><b>untracked</b>--git add --a--><b>unmodified</b>--edit file--><b>modified</b>--git add --a--><b>stagging area</b></p>
+   <h2>Ignoring files in git - </h2>
+   <ol>
+       <li>Create <strong>.gitignore</strong> file.</li>
+       <li>Add all the files and directories name which you want git should ignore them in .gitignore file.</li>
+       <li><strong>*.log</strong> - isse vo sari files ignore ho jaegi jinka extension <b>.log</b> hai</li>
+       <li>Add <b>&lt;dirname&gt;\</b> in .gitignore file to ignore all directories with name &lt;dirname&gt;.</li>
+       <li>Add <b>/dir/</b> to .gitignore to ignore only <b>outter</b> directory with name <b>dir</b>.</li>
+       <li>Add <b>static/dir</b> in .gitignore file to ignore dir directory <b>inside</b> static folder.</li>
+   </ol>
+   <h2>git diff & git diff --stage - </h2>
+   <p><strong>git diff : </strong>Shows difference between working directory and stagging area.</p>
+   <p><strong>git diff --stage : </strong>Show difference between previous working directory and stagging area.</p>
+   <h2>Skipping stagging area - </h2>
+   <p><strong>git commit -a -m "&lt;msg&gt;" - </strong>is used to skip stagging area but using this only code changes will be commited not the untracked file(newly created file) for untracked file we need to separately run command <strong>git add &lt;filename&gt;.</strong></p>
+   <h2>Removing and renaming files using git </h2>
+   <p><strong>git rm first.txt - </strong>- Delete file with name first.txt</p>
+   <p><strong>git mv first.txt second.txt.</strong>- Rename first.txt to second.txt.</p>
+   <p><strong>git rm --cached - </strong>let you are atracking file than you put it into .gitignore file than also git will not ignore it bcz you were tracking it to ignore it you have to explictly mention that you want to ignore this file by running command <strong>git rm --cached</strong>.</p>
+</body>
+</html>

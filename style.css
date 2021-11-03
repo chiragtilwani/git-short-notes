@@ -1,0 +1,21 @@
+
+html{
+    font-size:62.5%;
+}
+body{
+    font-size:2rem;
+}
+h1{
+    text-align:center;
+    text-decoration:underline;
+    margin-bottom:3rem;
+}
+li{
+    line-height: 1.2;
+}
+.inner-ol{
+    list-style-type:lower-alpha;
+}
+.steps{
+    list-style-type:"~";
+}
