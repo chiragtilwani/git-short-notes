@@ -10,7 +10,6 @@ html{
 }
 body{
     font-size:2rem;
-    overflow-x: hidden;
 }
 body::-webkit-scrollbar {
     width: 0rem;               
