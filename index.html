@@ -5,11 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://www.bing.com/th?id=OIP.hfbFPVjoJ-I02LsAnKojsAHaHa&w=105&h=105&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" type="image/x-icon">
     <title>Git short notes</title>
 </head>
 <body>
-    <h1>Git short notes</h1>
-    <h2>Git Introduction - </h2>
+    <nav>
+        <div><a id="heading" href="#">Git Short Notes</a> </div>
+        <div class="links">
+            <a href="#git-intro" title="Git intro">Introduction</a>
+            <a href="#initial-setup">Setup</a>
+            <a href="#3-stages">Three Stages</a>
+            <a href="#useful-cmnds">Basic Commands</a>
+            <a href="#cloning">Cloning</a>
+            <a href="#file-lifecycle">File Lifecycle</a>
+            <a href="#ignoring-files">Ignoring Files</a>
+            <a href="#git-diff">git-diff</a>
+            <a href="#skip-staging-area">Skip Staging Area</a>
+            <a href="#removing&renaming">Removing & Renaming</a>
+            <a href="#Unstaging">Unstaging</a>
+            <a href="#remote-repository">Remote Repository</a>
+            <a href="#branches">Branches</a>
+            
+        </div>
+        <div id="open"><svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="24" height="24"
+            viewBox="0 0 24 24"
+            style=" fill:white;"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"></path></svg></div>
+            <div id="close"><img class="close" src="https://th.bing.com/th/id/R.2da19d6a1a52bce84511ca3ebcfb8a0b?rik=S8SaiRX8RCQHQg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fdownload_118699.png&ehk=uur6x1BA8INtNLwAXOGGIJaWYZUHp%2bfhaQqAxbbbDao%3d&risl=&pid=ImgRaw&r=0" alt=""></div>
+    </nav>
+    <h2 id="git-intro" >Git Introduction - </h2>
     <ol>
         <li><strong>Git is Version Control System.</strong></li>
         <li><strong>Benefits of Git:</strong>
@@ -34,11 +58,10 @@
             </ol>
         </li>
     </ol>
-    <h2>Initial Setup - </h2>
+    <h2 id="initial-setup">Initial Setup - </h2>
     <ol>
-        <li>Launch git bash(it is nothing but terminal like linux, you can also use git using normal powershell windows terminal).</li>
-        <li>To check git is installed or not run command <strong>git</strong><br>&nbsp;&nbsp;if it shows error means your git is not installed and if it shows something like usage , --info path means your git is installed.</li>
-        <li>Git can be used in 2 ways - <br>1)Command line tools<small> (by writing commands) </small><br>2)GUI<small> (just by using buttons)</small><br>But disadvantage of using GUI is that we can't use some features that can be used by using command line tools.</li>
+        <li>Launch git bash.</li>
+        <li>To check git is installed or not run command <strong>git --version</strong>.</li>
         <li>Before using git configure your username and email as :</li>
             <ol class="inner-ol">
                 <li><strong>git config --global user.name "YOUR NAME"</strong> - for configuring username</li>
@@ -47,22 +70,22 @@
                 <li><strong>git config user.email</strong> - is used to check your email</li>
             </ol>
     </ol>
-    <h2>Git : Three Stages Architecture - </h2>
+    <h2 id="3-stages">Git : Three Stage Architecture - </h2>
     <ol>
         <li><strong>Working Directory - </strong>Full folder on which we are working on.</li>
         <li><strong>Staging Area - </strong>Those files which you want to be in next commit(snapshot).</li>
         <li><strong>Git Repository - </strong>It is hidden folder with name <strong>.git</strong> which has full file history of your project.</li>
     </ol>
-    <h2>Commands for Tracking Git Project - </h2>
+    <h2 id="useful-cmnds">Commands for Tracking Git Project - </h2>
     <ol>
         <li><strong>git status</strong> - To show status of your project,you can check if there is any changes left to be commited.</li>
         <li><strong>git init</strong> - To make any project as git project we need to run this command.</li>
-        <li><strong>git add --a</strong> - To add all the changes into staging area at once.</li>
+        <li><strong>git add --a</strong> or <strong>git add .</strong> - To add all the changes into staging area at once.</li>
         <li><strong>git commit -m "msg"</strong> - To commit changes.</li>
         <li><strong>git log</strong> - To display information of all commits of your project.</li>
         <li><strong>rm -rf .git</strong> - To stop tracking,It will delete .git file.</li>
     </ol>
-    <h2>Cloning remote git reopository - </h2>
+    <h2 id="cloning">Cloning remote git reopository - </h2>
     <ul class="steps">
         <li> Search for <strong>git website &lt;repository name &gt;</strong>.</li>
         <li> Press code button and then copy url.</li>
@@ -71,25 +94,63 @@
         <li><strong>Note :-</strong>You will become the owner of pulled repository not actual repository.</li>
         <li>If you want to give some different name to pulled repository you can do it by running <strong>git clone &lt;copied url&gt; &lt;name you want to give&gt;</strong></li>
     </ul>
-    <h2>File Status lifecycle - </h2>
+    <h2 id="file-lifecycle">File Status lifecycle - </h2>
    <p> <b>project</b> --git init--><b>untracked</b>--git add --a--><b>unmodified</b>--edit file--><b>modified</b>--git add --a--><b>stagging area</b></p>
-   <h2>Ignoring files in git - </h2>
+   <h2 id="ignoring-files">Ignoring files in git - </h2>
    <ol>
        <li>Create <strong>.gitignore</strong> file.</li>
        <li>Add all the files and directories name which you want git should ignore them in .gitignore file.</li>
-       <li><strong>*.log</strong> - isse vo sari files ignore ho jaegi jinka extension <b>.log</b> hai</li>
+       <li><strong>*.log</strong> - isse vo sari files ignore ho jaegi jinka extension <b>.log</b> hai.</li>
        <li>Add <b>&lt;dirname&gt;\</b> in .gitignore file to ignore all directories with name &lt;dirname&gt;.</li>
        <li>Add <b>/dir/</b> to .gitignore to ignore only <b>outter</b> directory with name <b>dir</b>.</li>
        <li>Add <b>static/dir</b> in .gitignore file to ignore dir directory <b>inside</b> static folder.</li>
    </ol>
-   <h2>git diff & git diff --stage - </h2>
+   <h2 id="git-diff">git diff & git diff --stage - </h2>
    <p><strong>git diff : </strong>Shows difference between working directory and stagging area.</p>
    <p><strong>git diff --stage : </strong>Show difference between previous working directory and stagging area.</p>
-   <h2>Skipping stagging area - </h2>
+   <h2 id="skip-staging-area">Skipping stagging area - </h2>
    <p><strong>git commit -a -m "&lt;msg&gt;" - </strong>is used to skip stagging area but using this only code changes will be commited not the untracked file(newly created file) for untracked file we need to separately run command <strong>git add &lt;filename&gt;.</strong></p>
-   <h2>Removing and renaming files using git </h2>
+   <h2 id="removing&renaming">Removing and renaming files using git </h2>
    <p><strong>git rm first.txt - </strong>- Delete file with name first.txt</p>
    <p><strong>git mv first.txt second.txt.</strong>- Rename first.txt to second.txt.</p>
-   <p><strong>git rm --cached - </strong>let you are atracking file than you put it into .gitignore file than also git will not ignore it bcz you were tracking it to ignore it you have to explictly mention that you want to ignore this file by running command <strong>git rm --cached</strong>.</p>
+   <p><strong>git rm --cached - </strong>let you are tracking file than you put it into .gitignore file than also git will not ignore it bcz you were tracking it, to ignore it you have to explictly mention that you want to ignore this file by running command <strong>git rm --cached</strong>.</p>
+   <h2 id="Unstaging">Unstaging & unmodifying files in git - </h2>
+   <ol>
+       <li><strong>git restore --staged &lt;filename&gt;</strong> - To unstage staged file.</li>
+       <li><strong>git checkout -- &lt;filename&gt;</strong> - let we have one commited file ,we made changes in it , now we want to discard these changes and we want to rollback on last commit than we use this command.</li>
+       <li><strong>git checkout -f</strong> - same as <strong>git checkout &lt;filename&gt;</strong> on difference is that it will discard changes of all the files and rollback them to previous commit.</li>
+   </ol>
+   <h2 id="remote-repository">Working with remote repository - </h2>
+   <ul>
+       <li>Go to github.</li>
+       <li>click on '+' on top right corner.</li>
+       <li>new repository.</li>
+       <li>give name to your repository.</li>
+    <li>give description.</li>
+    <li>create repository.</li>
+    <li>open git bash in folder you have to push and run commmand <strong>git remote add origin git@github.com:chiragtilwani/:nameYouHaveGiven.git</strong>.</li>
+    <li><strong>git push -u origin master</strong>.</li>
+   </ul>
+   <h2 id="branches">Creating ,Switching and Merging Branches - </h2>
+   <ol>
+       <li><strong>git checkout -b &lt;branchName&gt;</strong>- Create new branch with name &lt;branchName&gt;.</li>
+       <li><strong>git checkout &lt;branchName&gt;</strong> - To switch branch.</li>
+       <li><strong>git branch</strong>- -Display all the branches.</li>
+   </ol>
+   <h3>To merge branches to master branch - </h3>
+   <ol>
+       <li>Switch to master branch by running <strong>git checkout master</strong>.</li>
+       <li>Run command <strong>git merge &lt;branchName&gt;</strong></li>
+   </ol>
+   <p><strong>Note : </strong>Before switching between branches commit all the changes.</p>
+   <h2>Pushing branches to remote repositories - </h2>
+   <p>Let your project has 3 branches(master,idea1,idea2) by pushing your porject on github using command <strong>git push -u origin master</strong> it will only push master branch not idea1 and idea2 branch, to push idea1 and idea2 you need to explicitly run command for them as <strong>git push origin idea1</strong> for pushing idea1 branch and <strong>git push origin idea2</strong> for pushing idea2 branch.</p>
+   <p><strong>Note :- </strong>Be in same branch which you are pushing.Be in idea1 while pushing idea1 for example.</p>
+   <h3>To delete branch - </h3>
+   <p><strong>git branch -d idea1</strong> To delete idea1 branch.</p>
+   <p><strong>Note : </strong>This command will delete branch if and only if you have merged this branch to master else it will show warning.</p>
+   <p><strong>git branch -D idea1</strong> This will delete branch idea1 no matter it is merged or not.</p>
+   <p><strong>git branch -d origin idea1</strong> Above commands will delete branches from local repository but not from remote repository, in order to delete branch idea1 .</p>
+   <script src="script.js"></script>
 </body>
 </html>
