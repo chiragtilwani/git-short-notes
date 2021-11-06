@@ -3,7 +3,7 @@
     padding:0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    
+    word-wrap: break-word;
 }
 html{
     font-size:62.5%;
