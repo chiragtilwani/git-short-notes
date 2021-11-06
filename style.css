@@ -94,3 +94,8 @@ a{
 .steps{
     list-style-type:"~";
 }
+@media screen and  (max-width:600px) {
+    html{
+        font-size:45%;
+    }
+}
